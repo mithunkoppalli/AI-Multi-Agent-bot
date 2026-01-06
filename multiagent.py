@@ -101,7 +101,6 @@ def writer_agent(state: AgentState) -> AgentState:
     response = llm.invoke(prompt.format_messages())
     return {**state, "final_answer": response.content}
 
-
 graph = StateGraph(AgentState)
 
 graph.add_node("planner", planner_agent)
@@ -112,5 +111,6 @@ graph.set_entry_point("planner")
 graph.add_edge("planner", "searcher")
 graph.add_edge("searcher", "writer")
 graph.add_edge("writer", END)
+
 
 app = graph.compile()
