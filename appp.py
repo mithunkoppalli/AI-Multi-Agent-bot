@@ -95,7 +95,6 @@ def summarize_large_pdf(pdf_text):
 
     return final.content
 
-
 # -----------------------------------------------------------
 # LAYOUT
 # -----------------------------------------------------------
@@ -210,3 +209,4 @@ with right:
     if st.session_state.messages and st.session_state.messages[-1]["role"] == "assistant":
         st.markdown(st.session_state.messages[-1]["content"], unsafe_allow_html=True)
         st.caption(st.session_state.messages[-1]["timestamp"])
+
